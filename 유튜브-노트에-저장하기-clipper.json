@@ -1,0 +1,48 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "유튜브 노트에 저장하기",
+	"behavior": "create",
+	"noteContentFormat": "{{content}}\n\n\n----\n### 나의 생각\n>\n\n### 내용\n>\n\n### 출처(참고문헌)\n-\n\n\n### 연결문서\n-",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "created",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "source_url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "channel",
+			"value": "{{author}}",
+			"type": "text"
+		},
+		{
+			"name": "source",
+			"value": "youtube",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "clippings",
+			"type": "multitext"
+		},
+		{
+			"name": "author",
+			"value": "{{author}}",
+			"type": "multitext"
+		}
+	],
+	"triggers": [
+		"https://www.youtube.com/"
+	],
+	"noteNameFormat": "{{title}}",
+	"path": "Clippings"
+}

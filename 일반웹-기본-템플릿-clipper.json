@@ -1,0 +1,51 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "일반웹 기본 템플릿",
+	"behavior": "create",
+	"noteContentFormat": "{{content}}\n\n----\n### 나의 생각\n>\n\n### 내용\n>\n\n### 출처(참고문헌)\n-\n\n\n### 연결문서\n-",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "created",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "source_url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{author|split:\\\", \\\"|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "published",
+			"value": "{{published}}",
+			"type": "date"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "clippings",
+			"type": "multitext"
+		},
+		{
+			"name": "source",
+			"value": "web",
+			"type": "text"
+		}
+	],
+	"triggers": [],
+	"noteNameFormat": "{{title}}",
+	"path": "Clippings"
+}

@@ -1,0 +1,29 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "GPTers 게시글 가져오기",
+	"behavior": "create",
+	"noteContentFormat": "## Summary\n{{\"summarize what stood out to you from the content of this text. please do it with a Markdown bullet. Always in Korean\"}}\n\n## Keywords\n{{\"summarize the important keywords related to the content of this text as tags in #tag #nested/tag format.\"}}\n\n{{content}}",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{author}}",
+			"type": "multitext"
+		},
+		{
+			"name": "source_url",
+			"value": "{{url}}",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"https://www.gpters.org/"
+	],
+	"noteNameFormat": "{{title}}",
+	"path": "Clippings",
+	"context": "##Authur\n{{author}}\n\n##Content\n{{content}}"
+}

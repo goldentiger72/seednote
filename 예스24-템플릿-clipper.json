@@ -1,0 +1,104 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "예스24 템플릿",
+	"behavior": "create",
+	"noteContentFormat": "{{\"A 3-bullet-point summary. use Korean language.\"|callout:(\"summary\", \"3줄 요약\", false)}}\n\n{{selector:#yDetailTopWrap img.gImg?src|image:\"alt text|240\"}}\n\n## 책소개\n\n{{selector:#infoset_introduce textarea.txtContentText|markdown}}\n\n## 목차\n\n{{selector:#infoset_toc textarea.txtContentText|markdown}}\n\n## 책 속으로\n\n{{selector:#infoset_inBook textarea.txtContentText|markdown}}\n\n## 출판사 리뷰\n\n{{selector:#infoset_pubReivew textarea.txtContentText|markdown}}\n",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{title|replace:\\\"- 예스24\\\":\\\"\\\"|trim}}",
+			"type": "text"
+		},
+		{
+			"name": "subtitle",
+			"value": "{{selector:#yDetailTopWrap h3}}",
+			"type": "text"
+		},
+		{
+			"name": "source",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{author|replace:/\\s?(저|역|글|그림)/g:\\\"\\\"|split:\\\"/\\\"|trim|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "publisher",
+			"value": "{{selector:#yDetailTopWrap .gd_pub > a|wikilink}}",
+			"type": "multitext"
+		},
+		{
+			"name": "published",
+			"value": "{{published}}",
+			"type": "date"
+		},
+		{
+			"name": "created",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "cover",
+			"value": "{{selector:#yDetailTopWrap img.gImg?src}}",
+			"type": "text"
+		},
+		{
+			"name": "isbn",
+			"value": "{{selector:#infoset_specific tbody > tr:nth-child(3) > td}}",
+			"type": "text"
+		},
+		{
+			"name": "totalPage",
+			"value": "{{selector:#infoset_specific tbody > tr:nth-child(2) > td|split:\\\"쪽\\\"|first|trim}}",
+			"type": "number"
+		},
+		{
+			"name": "category",
+			"value": "{{selector:#infoset_goodsCate dd > ul > li:nth-child(1)|split:\\\">\\\"|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "started",
+			"value": "{{date|date:\\\"YYYY-MM-DD\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "completed",
+			"value": "",
+			"type": "date"
+		},
+		{
+			"name": "status",
+			"value": "🟧 예정",
+			"type": "text"
+		},
+		{
+			"name": "myRate",
+			"value": "⭐️⭐️⭐️⭐️⭐️",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "📚Book, {{\\\"3 tags about this page, comma separator.\\\"}}",
+			"type": "multitext"
+		},
+		{
+			"name": "진행률",
+			"value": "0",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"https://www.yes24.com/Product/"
+	],
+	"noteNameFormat": "{{title|replace:\"- 예스24\":\"\"|trim}}",
+	"path": "📖 Books",
+	"context": "## 책소개\n\n{{selector:#infoset_introduce textarea.txtContentText|markdown}}\n\n## 목차\n\n{{selector:#infoset_toc textarea.txtContentText|markdown}}\n\n## 책 속으로\n\n{{selector:#infoset_inBook textarea.txtContentText|markdown}}\n\n## 출판사 리뷰\n\n{{selector:#infoset_pubReivew textarea.txtContentText|markdown}}\n"
+}

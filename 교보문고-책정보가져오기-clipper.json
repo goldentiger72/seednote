@@ -1,0 +1,28 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "교보문고 책정보가져오기",
+	"behavior": "create",
+	"noteContentFormat": "{{content}}",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{author}}",
+			"type": "multitext"
+		},
+		{
+			"name": "source_url",
+			"value": "{{url}}",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"https://www.kyobobook.co.kr/"
+	],
+	"noteNameFormat": "{{title}}",
+	"path": "Clippings"
+}
